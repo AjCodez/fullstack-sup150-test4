@@ -14,15 +14,18 @@ body{
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #6563ff;
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,189,45,0.7364672364672364) 40%);
 }
 ::selection{
   color: #fff;
   background: #6563ff;
 }
 .wrapper{
+  width: 50%;
+  height: 550px;
   padding: 25px;
-  background: #f8f8f8;
+  background: #696c35;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
@@ -32,8 +35,8 @@ body{
   justify-content: center;
 }
 .cards{
-  height: 350px;
-  width: 350px;
+  height: 100%;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: space-between;
 }
@@ -118,11 +121,11 @@ body{
 .details button{
   cursor: pointer;
   font-size: 14px;
-  color: #6563ff;
+  color: #a6b016;
   border-radius: 4px;
   padding: 4px 11px;
   background: #fff;
-  border: 2px solid #6563ff;
+  border: 2px solid #a6b016;
   transition: 0.3s ease;
 }
 .details button:hover{

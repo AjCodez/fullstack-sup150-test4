@@ -3,29 +3,29 @@ timeTag = document.querySelector(".time b"),
 flipsTag = document.querySelector(".flips b"),
 refreshBtn = document.querySelector(".details button");
 
-// let maxTime = 20;
-// let timeLeft = maxTime;
-let flips = 12;
+let maxTime = 6;
+let timeLeft = maxTime;
+let flips = 0;
 let matchedCard = 0;
 let disableDeck = false;
 let isPlaying = false;
 let cardOne, cardTwo, timer;
 
-// function initTimer() {
-//     if(timeLeft <= 0) {
-//         return clearInterval(timer);
-//     }
-//     timeLeft--;
-//     timeTag.innerText = timeLeft;
-// }
+function initTimer() {
+    if(timeLeft <= 0) {
+        alert('youe game is over');
+        return clearInterval(timer);
+    }
+    
+}
 
 function flipCard({target: clickedCard}) {
     if(!isPlaying) {
         isPlaying = true;
         timer = setInterval(initTimer, 1000);
     }
-    if(clickedCard !== cardOne && !disableDeck && flips > 0) {
-        flips--;
+    if(clickedCard !== cardOne && !disableDeck && timeLeft > 0) {
+        flips++;
         flipsTag.innerText = flips;
         clickedCard.classList.add("flip");
         if(!cardOne) {
@@ -42,13 +42,17 @@ function flipCard({target: clickedCard}) {
 function matchCards(img1, img2) {
     if(img1 === img2) {
         matchedCard++;
-        if(matchedCard == 6 && flips > 0) {
+        if(matchedCard == 6 && timeLeft > 0) {
             return clearInterval(timer);
         }
         cardOne.removeEventListener("click", flipCard);
         cardTwo.removeEventListener("click", flipCard);
         cardOne = cardTwo = "";
         return disableDeck = false;
+    }
+    else{
+        timeLeft--;
+        timeTag.innerText = timeLeft;
     }
 
     setTimeout(() => {
@@ -65,8 +69,8 @@ function matchCards(img1, img2) {
 }
 
 function shuffleCard() {
-    flips =12;
-    matchedCard = 0;
+    timeLeft = maxTime;
+    flips = matchedCard = 0;
     cardOne = cardTwo = "";
     clearInterval(timer);
     timeTag.innerText = timeLeft;
