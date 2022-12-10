@@ -81,13 +81,13 @@ body{
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 .card .front-view img{
-  max-width: 17px;
+  max-width: 100px;
 }
 .card .back-view{
   transform: rotateY(-180deg);
 }
 .card .back-view img{
-  max-width: 40px;
+  max-width: 100%;
 }
 .card.flip .front-view{
   transform: rotateY(180deg);
@@ -139,10 +139,10 @@ body{
     width: 350px;
   }
   .card .front-view img{
-    max-width: 16px;
+    max-width: 200px;
   }
   .card .back-view img{
-    max-width: 40px;
+    max-width: 200px;
   }
 }
 
@@ -152,7 +152,7 @@ body{
     width: 300px;
   }
   .card .back-view img{
-    max-width: 35px;
+    max-width: 200px;
   }
   .details{
     margin-top: 10px;
