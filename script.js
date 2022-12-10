@@ -5,11 +5,12 @@ function loadBook(filename, displayName) {
 
     document.getElementById("fileName").innerHTML = displayName;
     document.getElementById("searchstat").innerHTML = "";
-    document.getElementById("keyword").value = "";
+    document.getElementById("keyword").value = "" ;
 
     var xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.send();
+
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
