@@ -1,7 +1,6 @@
-//Load a book from disk
 function loadBook(filename, displayName) {
     let currentBook = "";
-    let url = "./"+filename;
+    let url = filename;
 
     document.getElementById("fileName").innerHTML = displayName;
     document.getElementById("searchstat").innerHTML = "";
